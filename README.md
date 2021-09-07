@@ -22,16 +22,16 @@ EEG, local field potential (LFP), seizure detection, epilepsy, animal model, mac
 The code (code/seizure-detection/zebrafish.m) implements a graphical user interface for visualizing single-channel EEG, detecting seizures and performing simple time-frequency analysis. 
 Moreover, a separate function (code/classifier-training/train_svm_zebrafish.m) is provided to train a new classifier based on labelled data. For detailed description of both codes, please see the pdf documentation within each folder (zebrafish.pdf and train_svm_zebrafish.pdf). 
 
-# code/seizure-detection:
+### code/seizure-detection:
 1. zebrafish.m: Matlab code implementing the detector GUI
 2. zebrafish.fig: figure called by the GUI
 3. zebrafish.pdf: detailed documentation
 4. class_svm_chemical.mat and class_svm_genetic.mat: the classifiers used by the GUI
-# code/classifier-training:
+### code/classifier-training:
 1. train_svm_zebrafish.m: Matlab code to train a new classifier if needed, instead of using the included model (class_svm_chemical.mat and class_svm_genetic.mat)
 2. train_svm_zebrafish.pdf: documentation for the training function
 3. training_files.mat: and example training file for the train_svm_zebrafish function.
-# data:
+### data:
 1. example.txt: example data, the seizure-deteciton GUI software expects the EEG/LFP data in such a format.
 2. example.mat: labels for the example.txt file. Labels are created for each 100ms segment of the data. 1 means that the segment contains seizure, 0 means it does not.
 
