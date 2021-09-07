@@ -1,6 +1,6 @@
 # Zebrafish-LFP-seizure-detection
 
-##A.Introduction 
+## A.Introduction 
 
 1. Application
 EEG signal processing
@@ -17,7 +17,7 @@ Borbála Hunyadi, Aleksandra Siekierska, Jo Sourbron, Daniëlle Copmans, Peter A
 5. Key words/tags
 EEG, local field potential (LFP), seizure detection, epilepsy, animal model, machine learning
 
-##B. Describing the Code 
+## B. Describing the Code 
 
 Contents:
 1. zebrafish.m: Matlab code
@@ -37,14 +37,14 @@ Example use:
 [SVMModel]=train_svm_zebrafish(50,10,'chemical',cd,'training_files')
 
 
-##C. Running the Code 
+## C. Running the Code 
 
 To run the GUI, simply type zebrafish in the Matlab command line and press Enter. The GUI will initialize.
 To run the 
   	
 
-##D. Program Output 
+## D. Program Output 
 The outputs of the program are displayed in the GUI window or written in user-specified csv files.
 
-##E. Others
+## E. Others
 The software expects that the sampling rate of the EEG/LFP is 1000Hz. If your recordings are different, you will first need to resample the data.
