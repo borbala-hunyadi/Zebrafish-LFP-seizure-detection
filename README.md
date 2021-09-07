@@ -19,30 +19,28 @@ EEG, local field potential (LFP), seizure detection, epilepsy, animal model, mac
 
 ## B. Describing the Code 
 
-Contents:
-1. zebrafish.m: Matlab code
-2. zebrafish.fig (the figure for the GUI, no need to open this one)
-3. zebrafish.pdf: the documentation
-4. example.txt: the software expects the EEG/LFP data in such a format.
-5. example.mat: labels for the example.txt file. Labels are required for each 100ms segment of the data. 1 means that the segment contains seizure, 0 means it does not.
-6. class_svm_chemical.mat and class_svm_genetic.mat: the classifiers
-7. train_svm_zebrafish.m: if you want to train your own classifier, you need to use this function
-8. train_svm_zebrafish.pdf: documentation for the training function
-9. training_files.mat: and example training file for the train_svm_zebrafish function.
+The code (code/seizure-detection/zebrafish.m) implements a graphical user interface for visualizing single-channel EEG, detecting seizures and performing simple time-frequency analysis. 
+Moreover, a separate function (code/classifier-training/train_svm_zebrafish.m) is provided to train a new classifier based on labelled data. For detailed description of both codes, please see the pdf documentation within each folder (zebrafish.pdf and train_svm_zebrafish.pdf). 
 
-The code (zebrafish.m) implements a graphical user interface for visualizing single-channel EEG, detecting seizures and performing simple time-frequency analysis. 
-Moreover, a separate function (train_svm_zebrafish.m) is provided to train a new classifier based on labelled data. For detailed description of both codes, please see the pdf documentation. 
-
-Example use: 
-[SVMModel]=train_svm_zebrafish(50,10,'chemical',cd,'training_files')
+# code/seizure-detection:
+1. zebrafish.m: Matlab code implementing the detector GUI
+2. zebrafish.fig: figure called by the GUI
+3. zebrafish.pdf: detailed documentation
+4. class_svm_chemical.mat and class_svm_genetic.mat: the classifiers used by the GUI
+# code/classifier-training:
+1. train_svm_zebrafish.m: Matlab code to train a new classifier if needed, instead of using the included model (class_svm_chemical.mat and class_svm_genetic.mat)
+2. train_svm_zebrafish.pdf: documentation for the training function
+3. training_files.mat: and example training file for the train_svm_zebrafish function.
+# data:
+1. example.txt: example data, the seizure-deteciton GUI software expects the EEG/LFP data in such a format.
+2. example.mat: labels for the example.txt file. Labels are created for each 100ms segment of the data. 1 means that the segment contains seizure, 0 means it does not.
 
 
 ## C. Running the Code 
 
-To run the GUI, simply type zebrafish in the Matlab command line and press Enter. The GUI will initialize.
-To run the 
+To run the GUI, simply type [>> zebrafish] in the Matlab command line and press Enter. The GUI will initialize.
+An example to run the classidier training: [>> [SVMModel]=train_svm_zebrafish(50,10,'chemical',cd,'training_files')]
   	
-
 ## D. Program Output 
 The outputs of the program are displayed in the GUI window or written in user-specified csv files.
 
